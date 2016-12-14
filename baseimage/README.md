@@ -1,3 +1,1 @@
-# dockerfile
-httpd
-
+baseimage
