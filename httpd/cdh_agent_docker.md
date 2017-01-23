@@ -4,9 +4,7 @@ CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBas
 
 - gateway host压力不断增加，用户任务相互影响严重；
 - 用户需要在gateway上面部署单独的组件（比如phonix querey server）并要修改gateway上面的配置。
-为了解决这两个问题，选择将gateway 节点部署到docker的container里面。
-
- 为了保证用户无缝切换到docker环境，下面几个问题需要考虑：
+为了解决这两个问题，选择将gateway 节点部署到docker的container里面。为了保证用户无缝切换到docker环境，下面几个问题需要考虑：
 -  container 需要提供一个局域网ip＋port，用户可以通过ssh 登录到docker里面执行相关命令；
 -  cm 可以监控到container 里面的cm agent 状态；
 -  container 可以无缝迁移到别的节点，保证cm agent 可扩张行；
