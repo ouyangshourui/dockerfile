@@ -1,4 +1,6 @@
- CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBase,Impala、Spark)的gateway。在目前的使用情况下遇到的两个问题：
+ 
+# CDH gateway docker 制作和部署实战 
+CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBase,Impala、Spark)的gateway。在目前的使用情况下遇到的两个问题：
 
 - gateway host压力不断增加，用户任务相互影响严重；
 - 用户需要在gateway上面部署单独的组件（比如phonix querey server）并要修改gateway上面的配置。
@@ -14,4 +16,4 @@
 Pipework lets you connect together containers in arbitrarily complex scenarios. Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
 ```
 实现步骤：
-# docker file 制作
+## docker file 制作
