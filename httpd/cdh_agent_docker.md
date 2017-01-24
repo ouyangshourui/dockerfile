@@ -75,7 +75,7 @@ dab99972e41d        centos:7.2.1511cdh_agent  "/sbin/init"        39 hours ago  
   ```
   authconfig --enableldap --enableldapauth --ldapserver=ldapserver:389 --ldapbasedn="dc=idc,dc=wanda-group,dc=net" --enablemkhomedir --update
   ```
- ### 3)jdk 安装
+### 3)jdk 安装
  安装jdk1.8 ，安装路径如下：
  ```
  # pwd
