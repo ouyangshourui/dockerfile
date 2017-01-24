@@ -69,13 +69,13 @@ CONTAINER ID        IMAGE                              COMMAND             CREAT
 dab99972e41d        centos:7.2.1511cdh_agent  "/sbin/init"        39 hours ago        Up 39 hours                             10.214.128.27
 ```
 ## 5、 安装gateway相关依赖
-－ 拷贝kerberos 配置文件
+### 拷贝kerberos 配置文件
   scp  krb5.conf /etc/krb5.conf
-－ 配置ldap client
+### 配置ldap client
   ```
   authconfig --enableldap --enableldapauth --ldapserver=ldapserver:389 --ldapbasedn="dc=idc,dc=wanda-group,dc=net" --enablemkhomedir --update
   ```
-  － jdk 安装
+  ### jdk 安装
  安装jdk1.8 ，安装路径如下：
  ```
  # pwd
