@@ -30,6 +30,7 @@ RUN echo "root:123456" | chpasswd
 RUN systemctl enable sshd
 CMD ["/usr/sbin/init"]
 ```
+## 2、load image
 在dockerfile目录下面执行：
 ```
 imagename=cdh_agent
