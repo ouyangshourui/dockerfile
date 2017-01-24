@@ -88,4 +88,4 @@ lrwxrwxrwx. 1 root root   21 Jun 14  2016 latest -> /usr/java/jdk1.8.0_60
  ```
  
 #  5、 安装gateway
-
+![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
