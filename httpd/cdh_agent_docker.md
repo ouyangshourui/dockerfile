@@ -42,6 +42,14 @@ scp 7.2.1511${imagename}.tar  $dip:/opt
 ssh $dip "docker rmi centos:7.2.1511${imagename} && docker load -i /opt/7.2.1511${imagename}.tar"
 ```
 
-
-
-
+## 3、install pipework
+到docker 宿主机环境安装pipework
+官方网站：https://github.com/jpetazzo/pipework
+宿主环境：centos7
+安装pipework
+```
+# wget https://github.com/jpetazzo/pipework/archive/master.zip
+# unzip master.zip 
+# cp pipework-master/pipework  /usr/local/bin/
+# chmod +x /usr/local/bin/pipework 
+```
