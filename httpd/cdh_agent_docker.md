@@ -86,3 +86,6 @@ lrwxrwxrwx. 1 root root   16 Jun 14  2016 default -> /usr/java/latest
 drwxr-xr-x. 9 root root 4096 Jun 14  2016 jdk1.8.0_60
 lrwxrwxrwx. 1 root root   21 Jun 14  2016 latest -> /usr/java/jdk1.8.0_60
  ```
+ 
+#  5、 安装gateway
+
