@@ -53,3 +53,19 @@ ssh $dip "docker rmi centos:7.2.1511${imagename} && docker load -i /opt/7.2.1511
 # cp pipework-master/pipework  /usr/local/bin/
 # chmod +x /usr/local/bin/pipework 
 ```
+
+## 4、启动container 并配置IP
+```
+imagename=cdh_agent
+dname=10.214.128.27
+docker run  --name $dname --net=none -v /etc/hosts:/etc/hosts  --hostname testbig27.wanda.cn    -v /etc/localtime:/etc/localtime:ro    --privileged -d centos:${dname}  /sbin/init 
+#配置ip
+pipework br0   $dname 10.214.128.27/24@10.214.128.1
+```
+docker ps 查看相关信息：
+```
+[root@ctum2f0802001 ~]# docker ps
+CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS              PORTS               NAMES
+dab99972e41d        centos:7.2.1511mini_keberos_ldap   "/sbin/init"        39 hours ago        Up 39 hours                             10.214.128.27
+23a92c3faf98        centos:7.2.1511mini_keberos_ldap   "/sbin/init"        39 hours ago        Up 39 hours                             10.214.128.26
+```
