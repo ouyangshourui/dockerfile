@@ -10,10 +10,9 @@ CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBas
 -  container 可以无缝迁移到别的节点，保证cm agent 可扩张行；
 
 为了解决上面几个问题，我们选择给每一个container 提供一个独立的ip，初步选择了pipework＋docker的方案，有docker基础使用经验后再迁移到kubernetes或者openshift上面。我简单介绍一下pipework：
-```
-Pipework lets you connect together containers in arbitrarily complex scenarios. 
-Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
-```
+
+- Pipework lets you connect together containers in arbitrarily complex scenarios. 
+- Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
 实现步骤：
 
 ## 1、Dockerfile 
@@ -21,12 +20,18 @@ Pipework uses cgroups and namespace and works with "plain" LXC containers (creat
 FROM   docker.io/centos:centos7.2.1511
 MAINTAINER  "https://github.com/ouyangshourui"
 RUN yum -y install net-tools
+＃install ssh service
 RUN yum -y install openssh-server
 RUN yum -y install openssh-clients
+＃install kerberos client
 RUN yum -y  install krb5-workstation krb5-libs krb5-auth-dialog 1.3
+＃install ldap client
 RUN yum -y install nss-pam-ldapd
+＃install ifconfig tool
 RUN yum -y install authconfig
+＃install system rc.d folder
 RUN yum -y install initscripts
+# set root password 
 RUN echo "root:123456" | chpasswd
 RUN systemctl enable sshd
 CMD ["/usr/sbin/init"]
