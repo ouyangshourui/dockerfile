@@ -13,6 +13,7 @@ CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBas
 
 - Pipework lets you connect together containers in arbitrarily complex scenarios. 
 - Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
+
 实现步骤：
 
 ## 1、Dockerfile 
