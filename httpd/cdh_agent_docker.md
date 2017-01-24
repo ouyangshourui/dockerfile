@@ -66,5 +66,5 @@ docker ps 查看相关信息：
 ```
 [root@ctum2f0802001 ~]# docker ps
 CONTAINER ID        IMAGE                              COMMAND             CREATED             STATUS              PORTS               NAMES
-dab99972e41d        centos:7.2.1511mini_keberos_ldap   "/sbin/init"        39 hours ago        Up 39 hours                             10.214.128.27
+dab99972e41d        centos:7.2.1511cdh_agent  "/sbin/init"        39 hours ago        Up 39 hours                             10.214.128.27
 ```
