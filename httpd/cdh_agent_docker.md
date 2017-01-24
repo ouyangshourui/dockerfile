@@ -1,5 +1,5 @@
  
-# CDH gateway docker 制作和部署实战 
+# CDH gateway docker实战 
 CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBase,Impala、Spark)的gateway。在目前的使用情况下遇到的两个问题：
 
 - gateway host压力不断增加，用户任务相互影响严重；
@@ -30,3 +30,17 @@ RUN echo "root:123456" | chpasswd
 RUN systemctl enable sshd
 CMD ["/usr/sbin/init"]
 ```
+在dockerfile目录下面执行：
+```
+imagename=cdh_agent
+dip=CDH_gateway_host_ip
+docker build -t centos:7.2.1511${imagename} .
+docker save   centos:7.2.1511${imagename} > 7.2.1511${imagename}.tar
+scp 7.2.1511${imagename}.tar  $dip:/opt
+#load 到目标机器
+ssh $dip "docker rmi centos:7.2.1511${imagename} && docker load -i /opt/7.2.1511${imagename}.tar"
+```
+
+
+
+
