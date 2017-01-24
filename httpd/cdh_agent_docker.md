@@ -91,3 +91,7 @@ lrwxrwxrwx. 1 root root   21 Jun 14  2016 latest -> /usr/java/jdk1.8.0_60
 CDH console -> hosts -> add host
 
 ![image](https://github.com/ouyangshourui/dockerfile/blob/master/httpd/add_gateway.png)
+
+按照执行步骤
+
+![image](docker_agent.png)
