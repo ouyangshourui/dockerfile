@@ -92,6 +92,5 @@ CDH console -> hosts -> add host
 
 ![image](https://github.com/ouyangshourui/dockerfile/blob/master/httpd/add_gateway.png)
 
-按照执行步骤
-
-![image](docker_agent.png)
+按照执行步骤执行即可。最后在CDH consle 显示如下：
+![image](https://github.com/ouyangshourui/dockerfile/blob/master/httpd/docker_agent.png)
