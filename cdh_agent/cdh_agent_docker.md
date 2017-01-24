@@ -11,7 +11,8 @@ CDH 生产集群的Gateway节点需要给用户提供所有组件(HDFS,YARN,HBas
 
 为了解决上面几个问题，我们选择给每一个container 提供一个独立的ip，初步选择了pipework＋docker的方案，有docker基础使用经验后再迁移到kubernetes或者openshift上面。我简单介绍一下pipework：
 ```
-Pipework lets you connect together containers in arbitrarily complex scenarios. Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
+Pipework lets you connect together containers in arbitrarily complex scenarios. 
+Pipework uses cgroups and namespace and works with "plain" LXC containers (created with lxc-start), and with the awesome Docker.
 ```
 实现步骤：
 
