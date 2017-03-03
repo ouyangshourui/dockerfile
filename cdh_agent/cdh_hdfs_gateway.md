@@ -85,8 +85,7 @@ docker commit hdfs_gateway centos:hdfs_gateway_kerberos
 ```
 docker run --name hdfs_gateway_kerberos -v `pwd`/hosts:/etc/hosts -v /etc/localtime:/etc/localtime:ro -v /opt/hdfs:/opt/hdfs -itd centos:hdfs_gateway_kerberos /bin/sh
 ```
-
-＃5、测试
+# 5、测试
 
 进入hdfs_gateway_kerberos
 
