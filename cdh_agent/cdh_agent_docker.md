@@ -81,10 +81,8 @@ dab99972e41d        centos:7.2.1511cdh_agent  "/sbin/init"        39 hours ago  
   scp  krb5.conf /etc/krb5.conf
 ### 2)配置ldap client
   ```
-    systemctl stop   nslcd
-
+  systemctl stop   nslcd
   authconfig --enableldap --enableldapauth --ldapserver=ldapserver:389 --ldapbasedn="dc=idc,dc=wanda-group,dc=net" --enablemkhomedir --update
-  
   systemctl start   nslcd
   ```
 ### 3)jdk 安装
