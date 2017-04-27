@@ -35,6 +35,7 @@ RUN yum -y install initscripts
 # set root password 
 RUN echo "root:123456" | chpasswd
 RUN systemctl enable sshd
+RUN   systemctl enable   nslcd
 CMD ["/usr/sbin/init"]
 ```
 ## 2、load image
@@ -80,7 +81,11 @@ dab99972e41d        centos:7.2.1511cdh_agent  "/sbin/init"        39 hours ago  
   scp  krb5.conf /etc/krb5.conf
 ### 2)配置ldap client
   ```
+    systemctl stop   nslcd
+
   authconfig --enableldap --enableldapauth --ldapserver=ldapserver:389 --ldapbasedn="dc=idc,dc=wanda-group,dc=net" --enablemkhomedir --update
+  
+  systemctl start   nslcd
   ```
 ### 3)jdk 安装
  安装jdk1.8 ，安装路径如下：
