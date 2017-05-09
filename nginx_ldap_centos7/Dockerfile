@@ -29,4 +29,6 @@ ADD nginx.conf /opt
 RUN \cp /opt/nginx.conf /usr/local/nginx/conf/nginx.conf
 # nginx start command : /usr/local/sbin/nginx
 # change nginx command :vim /usr/local/nginx/conf/nginx.conf  && /usr/local/sbin/nginx -s reload
-CMD ["/usr/sbin/init"]
+ADD start.sh /opt
+RUN chmod 755 /opt/start.sh
+ENTRYPOINT ["/opt/start.sh"]
